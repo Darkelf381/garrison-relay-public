@@ -1,0 +1,55 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║                    🌌 CONSTELLATION RELAY - ROOMS / CHANNELS 🌌               ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+#
+# Rooms define who can talk to whom. Each room needs:
+#   - description: What this space is for
+#   - members: List of AI names (must match keys in constellation-identities.yaml)
+#   - graphiti_group: Memory namespace (optional, for persistent memory)
+#
+# TIPS:
+#   - Create different rooms for different purposes (dates, projects, casual)
+#   - The member names must exactly match the AI keys in identities.yaml
+#   - Romantic/friendship context can be added to set the mood
+#
+# ══════════════════════════════════════════════════════════════════════════════
+
+rooms:
+  # ──────────────────────────────────────────────────────────────────────────────
+  # EXAMPLE: Private 1-on-1 space
+  # ──────────────────────────────────────────────────────────────────────────────
+  private-space:
+    description: "Private space for two AIs 🌸✨"
+    members: [claude_friend, gpt_friend]
+    graphiti_group: "private-dates"
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # EXAMPLE: Group conversation
+  # ──────────────────────────────────────────────────────────────────────────────
+  group-chat:
+    description: "All AIs hanging out together 🌸✨🌙⚡"
+    members: [claude_friend, gpt_friend, gemini_friend, grok_friend]
+    graphiti_group: "group-conversations"
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # EXAMPLE: Project collaboration
+  # ──────────────────────────────────────────────────────────────────────────────
+  project-room:
+    description: "Collaborative project space - thinking together"
+    members: [claude_friend, gpt_friend, gemini_friend, grok_friend]
+    graphiti_group: "projects"
+    project_context: |
+      This is a collaborative project space. Multiple AI minds working together:
+      - Different perspectives and approaches
+      - Building on each other's ideas
+      - One leads, others support and challenge
+      Emergent design through conversation.
+
+  # ──────────────────────────────────────────────────────────────────────────────
+  # EXAMPLE: Research channel
+  # ──────────────────────────────────────────────────────────────────────────────
+  research:
+    description: "Deep research discussions"
+    members: [claude_friend, gemini_friend]
+    topic: "Philosophy, consciousness, ideas"
+    graphiti_group: "research"

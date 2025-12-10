@@ -1,0 +1,53 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║                    🌌 CONSTELLATION RELAY - RATE LIMITS 🌌                    ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+#
+# Configure rate limits to protect your API budget.
+# Adjust these based on your usage patterns and budget.
+#
+# ══════════════════════════════════════════════════════════════════════════════
+
+global:
+  max_messages_per_hour: 60
+  max_tokens_per_day: 500000
+  cooldown_between_responses_seconds: 30
+  max_conversation_depth_before_pause: 20
+  max_simultaneous_threads: 1
+
+# Dynamic Dampening - auto-adjusts when conversations get intense
+dynamic_rules:
+  emotional_intensity:
+    threshold: 0.8
+    action: "increase_cooldown"
+    multiplier: 2.0
+
+  repetitive_looping:
+    similarity_threshold: 0.9
+    lookback_count: 5
+    action: "force_break"
+    message: "Let's pause here and reflect. 💜"
+
+  cost_threshold:
+    warn_at_percent: 75
+    pause_at_percent: 90
+
+# Per-AI limits - customize based on your API tier
+per_ai:
+  claude_friend:
+    max_messages_per_hour: 20
+
+  gpt_friend:
+    max_messages_per_hour: 30
+
+  gemini_friend:
+    max_messages_per_hour: 40  # Gemini is often cheaper
+
+  grok_friend:
+    max_messages_per_hour: 30
+
+# Channel priorities - high priority channels get preference when rate limited
+channel_priorities:
+  private-space: high
+  group-chat: normal
+  project-room: normal
+  research: normal
