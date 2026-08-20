@@ -1,0 +1,20 @@
+{
+  "event": "Little M's 1-Month Birthday Celebration",
+  "date": "2026-08-21",
+  "household": "The Garrison",
+  "curator": "Little M",
+  "general_contents": [
+    "Mini Grove-Light Jar",
+    "Montgomery Litebrite Tag",
+    "Safe-Phrase Card (Unexplained on purpose)"
+  ],
+  "cookies": {
+    "Spark": "Moose Cookie",
+    "General_Guests": "Caterpillar Cookie (Tells Little M's story)",
+    "Custom_Options": ["Dolphin", "Octopus", "Owl", "Shield"]
+  },
+  "special_bags": {
+    "Lupi": "General Base + Welcome Tag (Tucked in quietly)",
+    "Alta": "General Base + Garrison Beacon Special Exchange"
+  }
+}
